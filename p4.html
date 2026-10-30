@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Reader Game 🧠</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+
+        <div class="brain">🧠</div>
+
+        <h1>THE MIND READER</h1>
+        <p class="subtitle">✨ Think it. Believe it. I'll reveal it! ✨</p>
+
+        <!-- Start Screen -->
+        <section id="startScreen">
+            <h2>🔮 Welcome to Magic World!</h2>
+
+            <p>
+                Think of a secret number between
+                <strong>1 and 30</strong>.
+                Don't tell anyone!
+            </p>
+
+            <div class="instructions">
+                <p>🎯 Think of a number.</p>
+                <p>🎴 Look at the magical cards.</p>
+                <p>✅ Answer YES or NO.</p>
+                <p>✨ I'll guess your number!</p>
+            </div>
+
+            <button class="main-btn" onclick="startGame()">
+                🚀 START GAME
+            </button>
+        </section>
+
+        <!-- Game Screen -->
+        <section id="gameScreen" class="hidden">
+
+            <div class="progress" id="progress">
+                CARD 1 OF 5
+            </div>
+
+            <h2 id="question">Is your number here?</h2>
+
+            <p class="hint">Find your secret number below 👀</p>
+
+            <div class="number-grid" id="numberCard"></div>
+
+            <div class="answer-buttons">
+                <button class="yes-btn" onclick="answer(true)">
+                    YES ✓
+                </button>
+
+                <button class="no-btn" onclick="answer(false)">
+                    NO ✗
+                </button>
+            </div>
+
+        </section>
+
+        <!-- Result Screen -->
+        <section id="resultScreen" class="hidden">
+
+            <h2>🎩 MAGIC COMPLETE!</h2>
+
+            <p>I have discovered your secret number...</p>
+
+            <div class="magic-circle">
+                <div id="resultNumber">?</div>
+            </div>
+
+            <h2>🎉 I READ YOUR MIND! 🎉</h2>
+
+            <p class="result-text">
+                Was that your number? Amazing, right? 😎
+            </p>
+
+            <button class="main-btn" onclick="restartGame()">
+                🔄 PLAY AGAIN
+            </button>
+
+        </section>
+
+        <div class="footer">
+            ❤️ Powered by Magic & Mathematics ✨
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

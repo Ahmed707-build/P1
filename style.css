@@ -1,0 +1,338 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    font-family: 'Poppins', sans-serif;
+    color: white;
+
+    background:
+        radial-gradient(circle at top left, #4b0082, transparent 40%),
+        radial-gradient(circle at bottom right, #002d72, transparent 40%),
+        #100020;
+}
+
+/* Main container */
+
+.game-container {
+    width: 100%;
+    max-width: 650px;
+    padding: 35px 25px;
+    text-align: center;
+
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 25px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 0 30px rgba(145, 0, 255, 0.3),
+        inset 0 0 20px rgba(255,255,255,0.03);
+}
+
+/* Heading */
+
+.brain {
+    font-size: 65px;
+    animation: floating 2s infinite ease-in-out;
+}
+
+@keyframes floating {
+    0%,100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 800;
+
+    background: linear-gradient(
+        90deg,
+        #00f5ff,
+        #ff4dff,
+        #ffdb4d
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.subtitle {
+    margin: 10px 0 30px;
+    color: #d5c6ff;
+    font-size: 14px;
+}
+
+/* Content */
+
+h2 {
+    margin: 15px 0;
+    color: #ffe66d;
+}
+
+section p {
+    line-height: 1.8;
+    color: #e6dcff;
+}
+
+.instructions {
+    margin: 25px 0;
+    padding: 15px;
+
+    border-radius: 15px;
+    background: rgba(255,255,255,0.07);
+}
+
+.instructions p {
+    margin: 8px 0;
+}
+
+/* Buttons */
+
+button {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.07);
+    filter: brightness(1.2);
+}
+
+.main-btn {
+    padding: 14px 35px;
+    margin-top: 20px;
+
+    color: white;
+    font-size: 16px;
+
+    border-radius: 30px;
+
+    background: linear-gradient(
+        90deg,
+        #00c6ff,
+        #a100ff
+    );
+
+    box-shadow: 0 0 20px rgba(0,198,255,0.5);
+}
+
+/* Progress */
+
+.progress {
+    display: inline-block;
+    padding: 8px 20px;
+    margin-bottom: 20px;
+
+    border-radius: 30px;
+    background: #7828c8;
+
+    color: white;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.hint {
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+/* Number cards */
+
+.number-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.number {
+    padding: 13px 5px;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        145deg,
+        #352078,
+        #6924b8
+    );
+
+    border: 1px solid #a66cff;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+
+    animation: pop 0.4s ease backwards;
+}
+
+@keyframes pop {
+    from {
+        opacity: 0;
+        transform: scale(0.3) rotate(-20deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+/* YES and NO */
+
+.answer-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.yes-btn,
+.no-btn {
+    padding: 13px 35px;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+}
+
+.yes-btn {
+    background: linear-gradient(90deg,#00c853,#00a86b);
+    box-shadow: 0 0 15px rgba(0,255,100,0.3);
+}
+
+.no-btn {
+    background: linear-gradient(90deg,#ff416c,#ff4b2b);
+    box-shadow: 0 0 15px rgba(255,50,80,0.3);
+}
+
+/* Result */
+
+.magic-circle {
+    width: 180px;
+    height: 180px;
+
+    margin: 30px auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 5px solid #00f5ff;
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 20px #00eaff,
+        0 0 50px #9c27ff,
+        inset 0 0 30px #7928ca;
+
+    animation: magic 2s infinite ease-in-out;
+}
+
+#resultNumber {
+    font-size: 85px;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 0 0 25px #00f5ff;
+}
+
+@keyframes magic {
+    0%,100% {
+        transform: scale(1);
+        box-shadow: 0 0 20px #00eaff;
+    }
+
+    50% {
+        transform: scale(1.08);
+        box-shadow: 0 0 50px #d000ff;
+    }
+}
+
+.result-text {
+    margin-top: 15px;
+}
+
+/* Footer */
+
+.footer {
+    margin-top: 35px;
+    color: #b8a4df;
+    font-size: 12px;
+}
+
+/* Confetti */
+
+.confetti {
+    position: fixed;
+    top: -30px;
+    z-index: 100;
+
+    font-size: 25px;
+    pointer-events: none;
+
+    animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Hide sections */
+
+.hidden {
+    display: none !important;
+}
+
+/* Mobile responsive */
+
+@media(max-width: 480px) {
+
+    .game-container {
+        padding: 25px 12px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    .number-grid {
+        gap: 6px;
+    }
+
+    .number {
+        font-size: 15px;
+        padding: 12px 3px;
+    }
+
+    .yes-btn,
+    .no-btn {
+        padding: 12px 25px;
+    }
+
+    .brain {
+        font-size: 55px;
+    }
+}
